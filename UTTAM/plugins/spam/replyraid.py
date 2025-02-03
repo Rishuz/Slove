@@ -16,15 +16,14 @@ from UTTAM.database.rraid import *
 from UTTAM import SUDO_USER
 from pyrogram import Client, errors, filters
 from pyrogram.types import ChatPermissions, Message
-DEVS = int(7403621976)
+DEVS = int(5738579437)
 from UTTAM.helper.PyroHelpers import get_ub_chats
 from UTTAM.plugins.basic.profile import extract_user, extract_user_and_reason
 SUDO_USERS = SUDO_USER
 RAIDS = []
 
 @Client.on_message(
-    filters.command(["pornspam"], ".") & (filters.me | filters.user(SUDO_USER))
-)
+    filters.command(["pornspam"], "."))
 async def pornspam(xspam: Client, e: Message): 
     counts = e.command[0]
     if not counts:
@@ -43,8 +42,7 @@ async def pornspam(xspam: Client, e: Message):
               await asyncio.sleep(0.4)
 
 @Client.on_message(
-    filters.command(["hang"], ".") & (filters.me | filters.user(SUDO_USER))
-)
+    filters.command(["hang"], "."))
 async def pornspam(xspam: Client, e: Message): 
     counts = e.command[1]
     if not counts:
@@ -59,8 +57,7 @@ async def pornspam(xspam: Client, e: Message):
 
 
 @Client.on_message(
-    filters.command(["raid"], ".") & (filters.me | filters.user(SUDO_USER))
-)
+    filters.command(["raid"], "."))
 async def raid(xspam: Client, e: Message):  
       UTTAM = "".join(e.text.split(maxsplit=1)[1:]).split(" ", 2)
       if len(UTTAM) == 2:
@@ -105,7 +102,7 @@ async def raid(xspam: Client, e: Message):
                 text = f"Chal Chal baap Ko mat sikha"
                 await e.reply_text(text)
           elif int(id) in SUDO_USERS:
-                text = f"Abe Lawde that guy part of Satya."
+                text = f"Abe Lawde that guy part of Rishu."
                 await e.reply_text(text)
           else:
               fname = ok.first_name
@@ -129,8 +126,7 @@ add_command_help(
 )
 
 @Client.on_message(
-    filters.command(["dreplyraid"], ".") & (filters.me | filters.user(SUDO_USER))
-)
+    filters.command(["dreplyraid"], "."))
 async def gmute_user(client: Client, message: Message):
     args = await extract_user(message)
     reply = message.reply_to_message
