@@ -18,7 +18,7 @@ from UTTAM.plugins.basic.profile import extract_user, extract_user_and_reason
 SUDO_USERS = SUDO_USER
 from .replyraid import RAIDS
 
-@Client.on_message(filters.command("replyraid"))  # 👈 Sab users ke liye enable
+@Client.on_message(filters.command("replyraid"))  #👈 Sab users ke liye enable#
 async def gmute_user(client: Client, message: Message):
     args = await extract_user(message)
     reply = message.reply_to_message
